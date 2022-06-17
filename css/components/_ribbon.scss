@@ -1,0 +1,33 @@
+.ribbon {
+  position: absolute;
+  width: 140px;
+  height: 32px;
+  left: -8px;
+  top: -17px;
+  background: $clr2;
+  border-radius: 0px 8px 8px 0px;
+  color: $clr3;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  @include for-only-narrow-layout {
+    font-size: 12px;
+  }
+  svg {
+    margin: 0 10px;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+  &::before {
+    height: 0;
+    width: 0;
+    bottom: -7px;
+    left: 0;
+    border-top: 7px solid darken($clr2, 10%);
+    border-left: 7px solid transparent;
+  }
+}

@@ -1,0 +1,17 @@
+.sale {
+  border-radius: 4px;
+  padding: 4px;
+  display: inline-block;
+  color: $clr5;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: $clr6;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  @include for-mobile-layout {
+    place-self: start;
+  }
+  @include for-normal-layout {
+    font-size: 14px;
+  }
+}

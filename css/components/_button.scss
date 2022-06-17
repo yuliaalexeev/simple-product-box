@@ -1,0 +1,41 @@
+.btn {
+  border-radius: 12px;
+  font-size: 16px;
+  color: $clr5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  @include for-narrow-layout {
+    font-weight: 700;
+  }
+  @include for-only-narrow-layout {
+    height: 36px;
+  }
+  &-filled {
+    background-color: $clr3;
+  }
+  &-outlined {
+    border: 2px solid $clr3;
+    background: transparent;
+    color: $clr3;
+    @include for-mobile-layout {
+      height: 34px;
+    }
+  }
+  &-cleaned {
+    background: none;
+    border: 0;
+    color: currentColor;
+    font-size: 14px;
+    @include for-narrow-layout {
+      font-weight: 600;
+    }
+    @include for-only-narrow-layout{
+      font-size: 12px;
+    }
+    .arrow.opened{
+      transform: rotate(180deg);
+    }
+  }
+}
