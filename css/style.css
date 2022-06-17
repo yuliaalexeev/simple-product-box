@@ -13,6 +13,7 @@ html {
 body {
   margin: 0;
   background-color: #F5F5F5;
+  padding: 20px;
 }
 
 h1,
@@ -44,11 +45,9 @@ button {
 }
 
 .main {
-  --padding: 20px;
-  max-width: calc(1024px + var(--padding));
+  max-width: 1024px;
   width: 100%;
   margin: 50px auto;
-  padding: var(--padding);
 }
 
 :root {

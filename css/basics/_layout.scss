@@ -1,9 +1,6 @@
 .main {
-  --padding: 20px;
-  max-width: calc(1024px + var(--padding));
+  max-width: 1024px;
   width: 100%;
   margin: 50px auto;
-  padding: var(--padding);
-
 }
 
