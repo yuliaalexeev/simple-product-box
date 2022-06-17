@@ -46,7 +46,10 @@
 
 .rating-stars {
   display: inline-block;
-  font-size: 15px;
+  font-size: 11px;
+  @include for-normal-layout{
+    font-size: 15px;
+  }
 }
 
 .rating-stars::before {
