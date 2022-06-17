@@ -73,6 +73,12 @@ button {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product {
+    padding: 20px 20px 40px 20px;
+  }
+}
+
 @media (min-width: 768px) {
   .product-main {
     display: -webkit-box;
@@ -85,7 +91,7 @@ button {
   .product-main .btn-cleaned {
     position: absolute;
     left: 151px;
-    bottom: 0;
+    top: 114px;
   }
 }
 
@@ -272,7 +278,6 @@ button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  margin-bottom: 20px;
   flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -307,6 +312,7 @@ button {
 @media (min-width: 1024px) {
   .product-expanded-info {
     max-width: var(--actions-width);
+    margin-bottom: 20px;
   }
 }
 
@@ -425,7 +431,7 @@ button {
 @media (min-width: 1024px) {
   .product-expanded-info .btn-outlined {
     grid-column: 1/-1;
-    margin-top: 12px;
+    margin-top: 8px;
   }
 }
 
