@@ -20,7 +20,7 @@
   @include for-mobile-layout {
     margin-right: 20px;
     position: absolute;
-    top: 10px;
+    top: 55px;
     right: 0;
   }
   &-num {
@@ -28,7 +28,7 @@
     &-info {
       position: absolute;
       top: -12px;
-      right: -2px;
+      right: -9px;
       @include for-normal-layout {
         top: -21px;
         right: -5px;

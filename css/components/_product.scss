@@ -12,15 +12,38 @@
   border-radius: 12px;
   position: relative;
   font-size: 14px;
-  padding: 20px;
+  padding: 35px 20px 20px;
+  counter-increment: questionNumber;
+  margin-bottom: 30px;
+  @include for-narrow-layout{
+    padding: 20px 10px;
+  }
   @include for-normal-layout {
-    padding: 7px 17px 13px 125px;
+    padding: 7px 17px 13px 17px;
     font-size: 16px;
   }
-  @include for-only-narrow-layout{
+  @include for-only-narrow-layout {
     padding: 20px 20px 40px 20px;
   }
   &-main {
+    &:before {
+      content: counters(questionNumber, '', decimal-leading-zero) ' ';
+      padding: 33px 19px 0 0;
+      font-weight: 700;
+      color: rgba(85, 98, 110, 0.25);
+      font-size: 64px;
+      position: absolute;
+      right: 0;
+      top: -72px;
+      @include for-narrow-layout{
+        font-size: 50px;
+        top: -61px;
+      }
+      @include for-normal-layout{
+        font-size: 80px;
+        position: static;
+      }
+    }
     @include for-narrow-layout {
       display: flex;
     }
@@ -41,12 +64,14 @@
         flex-direction: column-reverse;
         margin-bottom: 20px;
       }
-      h3 {
+      &-title {
         font-weight: 600;
         margin-top: 5px;
         line-height: 1.5;
         @include for-normal-layout {
           font-size: 16px;
+        }
+        @include for-only-narrow-layout{
           font-weight: 500;
         }
       }
@@ -66,6 +91,7 @@
     }
     &-img {
       width: 160px;
+      height: fit-content;
       @include for-mobile-layout {
         margin: 0 auto;
       }
@@ -78,9 +104,7 @@
     }
     &-actions {
       align-self: end;
-      flex-grow: 1;
-      flex-shrink: 0;
-      flex-basis: 100%;
+      flex: 1 0 100%; //flex-grow shrink basis
       @include for-only-narrow-layout {
         --actions-width: 170px;
         max-width: var(--actions-width);
@@ -101,19 +125,22 @@
   &-expanded {
     overflow-y: hidden;
     max-height: 0;
-    transition-property: all;
+    transition-property: max-height;
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     @include for-narrow-layout {
       display: flex;
       justify-content: space-between;
     }
+    @include for-normal-layout{
+      padding-left: 104px;
+    }
     &-description {
       @include for-narrow-layout {
         padding-top: 30px;
         max-width: 530px;
       }
-      h3 {
+      &-title{
         font-size: 18px;
         @include for-normal-layout {
           font-size: 20px;
@@ -131,15 +158,15 @@
     }
     &-info {
       align-self: end;
-      flex-grow: 1;
-      flex-grow: 1;
-      flex-shrink: 0;
-      flex-basis: 100%;
       font-weight: 600;
+      flex: 1 0 100%; 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
       grid-template-rows: repeat(2, 1fr);
+      @include for-mobile-layout{
+        grid-row-gap: 10px;
+      }
       @include for-narrow-layout {
         grid-template-rows: repeat(3, 1fr);
       }
@@ -203,7 +230,9 @@
         display: inline-block;
         grid-row: -2/-1;
         grid-column: 1/2;
-        justify-self: center;
+        @include for-mobile-layout{
+          justify-self: center;
+        }
         @include for-normal-layout {
           grid-row: 2;
           grid-column: 2/-1;
